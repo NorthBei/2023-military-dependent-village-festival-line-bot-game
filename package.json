@@ -1,0 +1,58 @@
+{
+  "name": "2023-military-dependent-village-festival-line-bot-game",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon",
+    "serve": "ts-node --project tsconfig.server.json server",
+    "build": "next build",
+    "start": "NODE_ENV=production ts-node --project tsconfig.server.json server",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@line/bot-sdk": "^7.5.2",
+    "@line/liff": "^2.22.3",
+    "clsx": "^2.0.0",
+    "express": "^4.18.2",
+    "firebase": "^10.4.0",
+    "firebase-admin": "^11.10.1",
+    "jotai": "^2.4.2",
+    "js-sha256": "^0.10.1",
+    "lodash": "^4.17.21",
+    "next": "13.4.19",
+    "react": "18.2.0",
+    "react-modal": "^3.16.1",
+    "react-slick": "^0.29.0",
+    "react-tooltip": "^5.21.4",
+    "slick-carousel": "^1.8.1",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/lodash": "^4.14.198",
+    "@types/node": "20.6.0",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "@types/react-modal": "^3.16.0",
+    "@types/react-slick": "^0.23.10",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "autoprefixer": "10.4.15",
+    "eslint": "^8.49.0",
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "nodemon": "^3.0.1",
+    "postcss": "8.4.29",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.2.2"
+  },
+  "engines": {
+    "node": "^18.16.0"
+  },
+  "packageManager": "^npm@9.5.1"
+}

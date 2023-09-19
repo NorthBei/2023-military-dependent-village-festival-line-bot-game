@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ref: https://codepen.io/CodeWithTanmay/pen/bGEBOJx */
+.shadow-button {
+  cursor: pointer;
+  transition: all 0.15s;
+  --x-offset: 2px;
+  --y-offset: 2px;
+  --shadow-color: #231815;
+  box-shadow: var(--x-offset) var(--y-offset) 0 0 var(--shadow-color);
+}
+
+.shadow-button:active {
+  transform: translate(var(--x-offset), var(--y-offset));
+  box-shadow: 0 0 0 0 var(--shadow-color);
+}
+
+
+.ReactModal__Overlay {
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
