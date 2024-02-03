@@ -8,6 +8,6 @@
     "server",
     "common"
   ],
-  "exec": "npm run serve",
+  "exec": "npm run serve --env=beta",
   "ext": "ts"
 }

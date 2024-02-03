@@ -25,8 +25,5 @@ module.exports = {
     fileLoaderRule.exclude = /\.svg$/i;
 
     return config;
-  },
-  images: {
-    domains: ['upload.wikimedia.org']
   }
 };

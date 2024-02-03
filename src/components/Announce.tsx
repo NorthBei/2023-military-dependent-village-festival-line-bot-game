@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { ReactNode } from 'react';
 
 import Button from './Button';
@@ -18,9 +17,8 @@ function Announce(props: AnnounceProps) {
   const { image, content, button, className } = props;
 
   return (
-    <div className={clsx('mt-[80px]', className)}>
-      {/* repetitive style */}
-      <div className="mx-auto flex max-w-[280px] flex-col items-center gap-[35px]">
+    <div className={className}>
+      <div className="mx-auto flex max-w-[320px] flex-col items-center gap-[35px]">
         <div className="h-[200px]">{image}</div>
         <div>
           {content.map((text) => {
@@ -33,7 +31,7 @@ function Announce(props: AnnounceProps) {
         </div>
         <div className="pb-[10px]">
           <Button isShowArrow={button.isShowArrow} onClick={button.onClick}>
-            {button.text}
+            <span className="whitespace-nowrap">{button.text}</span>
           </Button>
         </div>
       </div>

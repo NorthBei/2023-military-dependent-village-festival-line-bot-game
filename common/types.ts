@@ -2,6 +2,12 @@ import { Message } from '@line/bot-sdk';
 
 import localGlobalData from './localGlobalData';
 
+export enum WelcomeMsgType {
+  BeforeEvent = 'BeforeEvent',
+  DuringEvent = 'DuringEvent',
+  AfterEvent = 'AfterEvent'
+}
+
 export enum CardType {
   Chance = 'Chance',
   Destiny = 'Destiny'
@@ -17,8 +23,8 @@ export enum MonsterType {
 export enum MonsterStage {
   Init = 'Init',
   Growth = 'Growth',
-  Maternity = 'Maternity',
-  Complete = 'Complete'
+  GiftRedeem = 'GiftRedeem',
+  Maternity = 'Maternity'
 }
 
 export enum Era {
@@ -30,7 +36,10 @@ export enum Era {
   THE2000 = '2000'
 }
 
-export type UserLevelsRecord = Record<(typeof localGlobalData.levels)[number]['id'], { isPassed: boolean }>;
+export type UserLevelsRecord = Record<
+  (typeof localGlobalData.levels)[number]['id'],
+  { isPassed: boolean; randomLevelKey?: RandomLevelClassified }
+>;
 export type UserCardsRecord = Record<
   Era,
   | {
@@ -58,6 +67,7 @@ export type UserData = {
   levels: UserLevelsRecord;
   cards: UserCardsRecord;
   npcPoints: number;
+  initAt: string; // dateTime string, e.g. 2024-02-03 09:12:57
 };
 
 export enum RandomLevelClassified {
@@ -88,7 +98,7 @@ export type BasicLevel = {
 
 export type NormalLevel = {
   type: LevelType.Normal;
-  content: Message[];
+  content: (data?: Record<string, string>) => Message[];
   password: string;
 } & BasicLevel;
 

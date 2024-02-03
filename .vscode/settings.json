@@ -1,0 +1,14 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "directory": "functions/",
+      "changeProcessCWD": true
+    }
+  ],
+  "cSpell.words": [
+    "Firestore",
+    "imagemap",
+    "liff",
+    "postback"
+  ]
+}

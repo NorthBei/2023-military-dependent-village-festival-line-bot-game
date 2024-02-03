@@ -1,26 +1,34 @@
 {
   "name": "2023-military-dependent-village-festival-line-bot-game",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nodemon",
-    "serve": "ts-node --project tsconfig.server.json server",
-    "build": "next build",
-    "start": "NODE_ENV=production ts-node --project tsconfig.server.json server",
-    "lint": "next lint"
+    "serve": "NODE_ENV=$npm_config_env ts-node -r dotenv-flow/config --project tsconfig.server.json server",
+    "build": "next build && tsc --build ./tsconfig.server.json --force --verbose",
+    "start:js": "NODE_ENV=production node ./build/server",
+    "lint": "next lint",
+    "scan:export": "npx ts-unused-exports ./tsconfig.json"
   },
   "dependencies": {
     "@line/bot-sdk": "^7.5.2",
     "@line/liff": "^2.22.3",
+    "app-root-path": "^3.1.0",
     "clsx": "^2.0.0",
+    "dayjs": "^1.11.10",
     "express": "^4.18.2",
+    "fecha": "^4.2.3",
     "firebase": "^10.4.0",
     "firebase-admin": "^11.10.1",
     "jotai": "^2.4.2",
     "js-sha256": "^0.10.1",
     "lodash": "^4.17.21",
+    "module-alias": "^2.2.3",
     "next": "13.4.19",
     "react": "18.2.0",
+    "react-countdown": "^2.3.5",
+    "react-fast-marquee": "^1.6.1",
+    "react-ga4": "^2.1.0",
     "react-modal": "^3.16.1",
     "react-slick": "^0.29.0",
     "react-tooltip": "^5.21.4",
@@ -29,6 +37,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@types/dotenv-flow": "^3.3.1",
     "@types/lodash": "^4.14.198",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",
@@ -38,6 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "autoprefixer": "10.4.15",
+    "dotenv-flow": "^3.3.0",
     "eslint": "^8.49.0",
     "eslint-config-next": "^13.4.19",
     "eslint-config-prettier": "^9.0.0",
@@ -52,7 +62,11 @@
     "typescript": "5.2.2"
   },
   "engines": {
-    "node": "^18.16.0"
+    "node": "^18.18.2",
+    "npm": "^9.8.1"
   },
-  "packageManager": "^npm@9.5.1"
+  "packageManager": "^npm@9.8.1",
+  "_moduleAliases": {
+    "@/common": "build/common"
+  }
 }

@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "military-village-festival",
+    "beta": "military-village-beta",
+    "prod": "military-village-festival"
+  },
+  "targets": {},
+  "etags": {}
+}

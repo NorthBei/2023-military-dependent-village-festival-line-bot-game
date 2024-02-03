@@ -7,7 +7,11 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
+    "outDir": "./build",
+    "paths": {
+      "@/common/*": ["./common/*"],
+    }
   },
-  "include": ["server/**/*", "common/**/*"]
+  "include": ["server/**/*", "common/**/*"],
+  "exclude": ["node_modules", "functions"]
 }

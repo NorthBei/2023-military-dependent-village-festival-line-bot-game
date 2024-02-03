@@ -1,10 +1,12 @@
-import { Era } from './types';
+import { Era, WelcomeMsgType } from './types';
 
 export const dbGlobalData = {
+  welcomeMsgType: WelcomeMsgType.BeforeEvent,
   isWebAvailable: true,
   isGameAvailable: true,
-  isEventEnd: false,
-  currentEra: Era.THE1970,
+  currentEra: Era.THE1950,
+  announcement: '聽蔡媽媽說村子裡又誕生一隻新的轉轉獸👾',
+  allLevelFinishedCount: 0,
   era: {
     1950: {
       startTime: '2021-02-11',

@@ -28,17 +28,49 @@ const config: Config = {
     },
     extend: {
       keyframes: {
-        'spin-max': {
+        spin5times: {
           '0%': {
-            transform: 'rotate(0) scale(0.3)'
+            transform: 'rotate(0) scale(0.01)'
           },
           '100%': {
             transform: 'rotate(1800deg) scale(1)'
           }
+        },
+        rotate: {
+          '0%': {
+            transform: 'rotate(0)'
+          },
+          '100%': {
+            transform: 'rotate(360deg)'
+          }
+        },
+        breathePer30s: {
+          '0%, 96%': {
+            width: '48px',
+            height: '48px'
+          },
+          '97%': {
+            width: '52px',
+            height: '52px'
+          },
+          '98%': {
+            width: '44px',
+            height: '44px'
+          },
+          '99%': {
+            width: '52px',
+            height: '52px'
+          },
+          '100%': {
+            width: '48px',
+            height: '48px'
+          }
         }
       },
       animation: {
-        'spin-max': 'spin-max 0.5s ease-in-out 1s 1'
+        spin5times: '0.5s ease-in-out 0.2s 1 both paused spin5times',
+        rotate: '6s linear infinite rotate',
+        breathePer30s: '30s ease-in-out infinite breathePer30s'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
