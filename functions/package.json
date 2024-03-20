@@ -5,10 +5,9 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "serve": "npm run build && firebase emulators:start --only functions",
-    "shell": "NODE_ENV=prod npm run build && NODE_ENV=prod firebase functions:shell",
-    "start": "npm run shell",
-    "deploy:beta": "NODE_ENV=beta firebase deploy --project=beta --only functions",
-    "deploy:prod": "NODE_ENV=prod firebase deploy --project=prod --only functions",
+    "shell": "NODE_ENV=$npm_config_env npm run build && NODE_ENV=$npm_config_env firebase functions:shell",
+    "start": "npm run shell --env=prod",
+    "deploy": "NODE_ENV=$npm_config_env firebase deploy --project=$npm_config_env --only functions",
     "logs": "firebase functions:log"
   },
   "engines": {
