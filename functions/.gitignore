@@ -13,7 +13,8 @@ node_modules/
 firebase-debug.log
 
 # environment variables
-.env.*
+.env.beta
+.env.prod
 
 # data download from DB
 data/
